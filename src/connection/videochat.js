@@ -49,6 +49,9 @@ import { socket, mySocketId } from '../connection/socket';
         setCallEnded(true);
         setIsCalling(false);
         setReceivingCall(false);
+      });
+      socket.on("callRejected", () => {
+        setIsCalling(false);
         setReceivingCall(false);
       });
 
@@ -157,6 +160,16 @@ import { socket, mySocketId } from '../connection/socket';
       peer.signal(callerSignal);
     }
 
+    const rejectCall = () => {
+      // Notify the other player that the call has been rejected
+      socket.emit("rejectCall", { to: caller });
+
+      // Reset call-related state
+      setReceivingCall(false);
+      setCaller("");
+      setCallerSignal(null);
+    };
+
     const endCall = () => {
       if (callAccepted) {
         // Notify the other player to end the call
@@ -196,7 +209,7 @@ import { socket, mySocketId } from '../connection/socket';
 
           <div className='flexy'>
             <button className='answer' onClick={acceptCall}>Accept</button>
-            <button className='reject' onClick={acceptCall}>Decline</button>
+            <button className='reject' onClick={rejectCall}>Decline</button>
           </div>
         </div>
       )
