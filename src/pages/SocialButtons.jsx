@@ -6,7 +6,7 @@ import clipboard from '../img/clipboard.png';
 import copied from '../img/copied.png';
 
 const SocialButtons = ({ gameid }) => {
-  const domainName = process.env.DOMAIN;
+  const domainName = process.env.DOMAIN || "https://pchess-pureshwar.vercel.app";
   const [gameLinkCopied, setGameLinkCopied] = useState(false);
 
   const copyGameLinkToClipboard = () => {
