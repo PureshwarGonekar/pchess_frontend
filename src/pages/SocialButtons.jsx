@@ -6,7 +6,7 @@ import clipboard from '../img/clipboard.png';
 import copied from '../img/copied.png';
 
 const SocialButtons = ({ gameid }) => {
-  const domainName = 'http://localhost:3000';
+  const domainName = process.env.DOMAIN;
   const [gameLinkCopied, setGameLinkCopied] = useState(false);
 
   const copyGameLinkToClipboard = () => {
