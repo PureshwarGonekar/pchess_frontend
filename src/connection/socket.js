@@ -1,8 +1,7 @@
 import io from 'socket.io-client'
 
-const URL = process.env.BACKEND_URL ;
-
-const socket = io(URL)
+const socket = io('https://pchess-backend.vercel.app/')
+console.log(socket)
 
 var mySocketId
 // register preliminary event listeners here:
