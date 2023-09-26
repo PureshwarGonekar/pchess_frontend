@@ -75,11 +75,25 @@ import { socket, mySocketId } from '../connection/socket';
       }
     };
     const handleAbortButtonClick = () => {
-      // Notify the other player to end the call (if it's ongoing)
-      if (callAccepted) {
+      // First confirm from user by showing alert with yes no buttons
+      const confirmed = window.confirm("Are you sure you want to abort from the Game?");
+      if (confirmed) {
+      // Notify the other player to end the call
         socket.emit("endCall", { to: props.opponentSocketId });
+
+        // Additional clean-up actions if needed
+        setCallAccepted(false);
+        setCallEnded(true);
+        setIsCalling(false);
+        setReceivingCall(false);
+        // Redirect to the desired page (e.g., home)
+        history.push('/');
+        if (callAccepted) {
+          socket.emit("endCall", { to: props.opponentSocketId });
+        }
+        window.location.reload(true);
+        history.push('/');
       }
-      history.push('/');
     };
 
     function callPeer(id) {
