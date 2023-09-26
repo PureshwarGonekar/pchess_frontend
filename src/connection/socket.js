@@ -1,6 +1,6 @@
 import io from 'socket.io-client'
 
-const socket = io('https://pchess-backend.vercel.app/')
+const socket = io('https://stone-lime-vise.glitch.me/')
 console.log(socket)
 
 var mySocketId
