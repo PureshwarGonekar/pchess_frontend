@@ -141,8 +141,6 @@ class ChessGame extends React.Component {
             playerTurnToMoveIsWhite: true,
             whiteKingInCheck: false,
             blackKingInCheck: false,
-            gameOver: false,
-            winner: null,
             requestingRematch: false,
         });
     };

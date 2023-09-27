@@ -2,7 +2,6 @@ import io from 'socket.io-client'
 
 URL = process.env.BACKEND_URL || 'https://stone-lime-vise.glitch.me/'
 const socket = io(URL)
-console.log(socket)
 
 var mySocketId
 // register preliminary event listeners here:
