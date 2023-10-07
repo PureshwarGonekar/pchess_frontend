@@ -395,7 +395,6 @@
 @media screen and (max-width: 361px) {
     .queenimg{
        display: none;
-       border: 2px solid brown;
     }
     .waitingpage{
         margin-left: 90%;
@@ -405,7 +404,6 @@
         width: fit-content;
         display: flex;
         flex-direction: column;
-        border: 3px solid red;
     }
     
 }

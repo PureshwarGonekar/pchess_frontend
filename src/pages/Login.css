@@ -132,3 +132,11 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 360px){
+  .rightLogin{
+    width: 200%;
+  }
+  .input-group input {
+    width: 100%;
+  }
+}
