@@ -9,11 +9,11 @@ const Home = ({handleMenuItemClick}) => {
     handleMenuItemClick('Play');
   }
   const joinGame = ()=>{
-    history.push('/play');
+    history.push('/join');
     handleMenuItemClick('Join');
   }
   return (
-      <section className='rightmain'>
+      <section className='rightmain home'>
         <div className="chessboard">
           <img className='chessOsmImg' alt='icon' src={require('../img/chessOsm.jpg')}/>
         </div>

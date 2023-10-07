@@ -17,7 +17,7 @@ import ShareButtons from '../../pages/SocialButtons';
 import logogif from "../../img/pchess.gif";
 import queengirl from "../../img/queengirl.jpg";
 
-const scaleFactor = 0.9;
+
 
 const chessboardThemes ={
     default : ChessBoard1,
@@ -225,6 +225,11 @@ class ChessGame extends React.Component {
 
     render() {
         const { gameOver, winner } = this.state;
+        let scaleFactor = 0.8;
+        const screenWidth = window.innerWidth;
+        console.log(screenWidth);
+
+        const boardSize = 720 * scaleFactor;
         // console.log(this.state.gameState.getBoard())
        //  console.log("it's white's move this time: " + this.state.playerTurnToMoveIsWhite)        
         return (
@@ -233,12 +238,15 @@ class ChessGame extends React.Component {
             backgroundImage: `url(${Board1})`,
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
-            transform: `scaleX(${scaleFactor})`,
-            transform: `scaleY(${scaleFactor})`,
-            marginBlock: "-10px",
+            width: boardSize + 'px',
+            height: boardSize + 'px',
             }}
         >
-            <Stage width={720 * scaleFactor} height={720 * scaleFactor} scale={{ x: scaleFactor, y: scaleFactor }}>
+            <Stage width={boardSize}
+                height={boardSize}
+                scaleX={scaleFactor}
+                scaleY={scaleFactor}
+            >
                 <Layer>
                 {this.state.gameState.getBoard().map((row) => {
                     return (<React.Fragment>
@@ -431,7 +439,7 @@ const ChessGameWrapper = (props) => {
                     restartingGame={restartingGame}
                     ref={chessGameRef}
                 />
-                <h4 className='player'> You: <strong>{props.myUserName} </strong> </h4>
+                <h4 style={{ marginTop: "10px" }} className='player'> You: <strong>{props.myUserName} </strong> </h4>
             </div>
             
 
@@ -449,12 +457,12 @@ const ChessGameWrapper = (props) => {
           </div>
         ) : gameSessionDoesNotExist ? (
           <div>
-            <Link to="/" style={{ textAlign: "center", marginTop: "200px" }}> <button className='toggle-camera'> :( Back to Home </button></Link>
+            <Link to="/" > <button style={{ textAlign: "center", marginTop: "200px" }}> :( Back to Home </button></Link>
           </div>
         ) : (
-          <>
+          <div className='waitingpage'>
             <div className='queengirl flexy'>
-                <img src={queengirl} alt="" />
+                <img className="queenimg" src={queengirl} alt="" />
                 <div className='welcome'>
                     <h1 >Welcome to PChess </h1>
                     <p>Enjoy Chess with Friend!</p>
@@ -479,11 +487,11 @@ const ChessGameWrapper = (props) => {
             <br></br>
 
             <ShareButtons gameid={gameid} />
-            <h1 className='flexy wait'>
+            <h1 className='blocky wait'>
               Waiting for the opponent to join the game...{" "}
+            <button className='flexy cancelbtn' onClick={() => history.push('/play')}>Cancel</button>
             </h1>
-            <button className='cancelbtn' onClick={() => history.push('/play')}>Cancel</button>
-          </>
+          </div>
         )}
       </React.Fragment>
     );

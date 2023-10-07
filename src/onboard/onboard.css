@@ -84,3 +84,32 @@
 .width100{
   width: 100%;
 }
+
+@media screen and (max-width: 360px) {
+  .Play_screen {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .Play_container {
+    width: 90%;
+  }
+  .Play_container h1{
+    font-size: large;
+  }
+
+  .Play_container input {
+    width: 100%;
+  }
+
+  .Play_container button {
+    width: 50%;
+  }
+  .Play_screen button {
+    width: 80%;
+  }
+  .width100{
+    flex-direction: column;
+    
+  }
+}

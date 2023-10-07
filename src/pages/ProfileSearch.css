@@ -1,6 +1,7 @@
 
 .profile-container {
   width: 86%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,13 +34,10 @@
 }
 
 
-
-
 .profile-data {
   border: 1px solid #ccc;
   padding: 20px;
-  max-width: 500px;
-  margin: 0 auto;
+  
   background-color: #f5f5f5;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -48,22 +46,16 @@
 .MainData{
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
+  height: fit-content;
 }
 
 
 .search-container h1{
-  padding: 15px;
+  padding: 3%;
   font-size:x-large;
   background-color: aquamarine;
   border-radius: 5px;
-}
-
-.MainData{
-  margin-top: 100px;
-  height: fit-content;
-}
-.marignright100{
-  margin-right: 100px;
 }
 
 .ProfileSearch{
@@ -77,4 +69,25 @@
 .highlight{
   padding: 5px;
   background-color: beige;
+}
+
+@media screen and (max-width: 360px){
+  .profile-container{
+    font-size: smaller;
+  }
+  .search-container{
+    width: 40%;
+  }
+  .search-container h1{
+    font-size: small;
+  }
+  .search-container input{
+    width: 80%;
+  }
+  .profile-data {
+    font-size: small;
+  }
+  .ProfileSearch{
+    flex-direction: column;
+  }
 }

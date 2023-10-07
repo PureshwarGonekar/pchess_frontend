@@ -16,7 +16,7 @@ const JoinSection = () => {
     
     <div className='Play_screen'>
         <div className='Play_container'>
-            <div className='width100' style={{marginRight: "-100px"}}>
+            <div className='width100' >
                 <label htmlFor='gameId' > Game Id: </label>
                 <input 
                     className='righty'

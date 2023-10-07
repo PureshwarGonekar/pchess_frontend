@@ -1,5 +1,5 @@
 .themeContainer{
-    width: 80% !important;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,4 +83,38 @@
 }
 .react-multi-carousel-dot.react-multi-carousel-dot--active button {
   background: rgb(255, 68, 68) !important;
+}
+
+@media screen and (max-width: 360px) {
+  .cont{
+    margin-top: 75%;
+    margin-left: 80%;
+    flex-direction: column;
+  }
+  .cont img{
+    margin-left: 30%;
+    height: 30%;
+    width: 40%;
+  }
+  .parent{
+    width: 100%;
+  }
+
+  .themebtn{
+    width: fit-content;
+    max-width: 90%;
+  }
+
+  .choosetheme{
+    margin-top: 5%;
+    font-size: large;
+    width: 200%;
+  }
+  /* .choosetheme h1{
+    font-size: large;
+  } */
+
+  .multislider img{
+    width: 90%;
+  }
 }

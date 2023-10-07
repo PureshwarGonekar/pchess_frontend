@@ -1,7 +1,7 @@
 const datas = [
   {
     name: 'data',
-    title: 'Chess Updates 🥳',
+    title: 'Chess Updates',
     description:
       'Spell Chess Opening Theory',
     intro: 'Read Documentation →',

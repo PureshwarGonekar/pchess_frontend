@@ -65,7 +65,7 @@ function ProfileSearch() {
       </div>
       {/* till header container */}
       <div className="ProfileSearch">
-        <div className="MainData marignright100">
+        <div className="MainData" style={{marginRight: "5px"}}>
           {profileData && (
             <div className="profile-data">
               <h2>Player: <strong className='name'>{profileData.name} </strong> </h2>

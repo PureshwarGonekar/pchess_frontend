@@ -123,7 +123,7 @@ const Theme = ({selectedTheme, handleThemeChange}) => {
                     handleThemeChange(theme.name);
                     showAlert(theme.name);
                   }}>
-                    {selectedTheme===theme.name ? 'Selected' : `Select the  ${theme.name}`} 
+                    {selectedTheme===theme.name ? 'Selected' : `${theme.name}`} 
                   </button>
                 </div>
               );

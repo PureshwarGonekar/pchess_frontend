@@ -56,3 +56,24 @@
   color: white;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .side-bar {
+    width: 100%; /* Make the sidebar take the full width of the screen */
+  }
+
+  .menu li {
+    margin-bottom: 5px; /* Reduce the margin between menu items */
+  }
+
+  .menulogo {
+    height: 20px; /* Decrease the height of the menu icons */
+    width: 20px; /* Decrease the width of the menu icons */
+    margin-left: 3px; /* Reduce left margin for icons */
+    margin-right: 10px; /* Reduce right margin for icons */
+  }
+
+  .footer {
+    font-size: smaller; /* Reduce font size for the footer */
+  }
+}

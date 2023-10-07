@@ -81,7 +81,7 @@ a:link {
 .navbarcontainer{
     background: linear-gradient(90deg, rgba(172,231,255,1) 0%, rgba(242,216,255,1) 87%);
     margin-left: 5%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     border-radius: 5px;
     display: flex;
     flex-direction: row;

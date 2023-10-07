@@ -118,6 +118,8 @@
 }
 
 .cancelbtn{
+    margin-top: 5%;
+    width: fit-content;
     border-radius: 5px;
     background-color: rgb(186, 251, 251);
     align-items: center;
@@ -243,6 +245,7 @@
 }
 
 .chessgame{
+    margin-top: 5px;
     width: 86%;
     display: flex;
     justify-content: end;
@@ -382,4 +385,27 @@
 .abort-button:active{
     outline: none;
     transform: scale(1);
+}
+.waitingpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (max-width: 361px) {
+    .queenimg{
+       display: none;
+       border: 2px solid brown;
+    }
+    .waitingpage{
+        margin-left: 90%;
+    }
+    .chessgame{
+        margin-left: 110%;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        border: 3px solid red;
+    }
+    
 }
